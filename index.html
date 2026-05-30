@@ -3,138 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>4K Informática | Assistência Técnica Especializada</title>
+<title>4K Informática | Assistência Técnica</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Inter',sans-serif;
-  scroll-behavior:smooth;
-}
-
-body{
-  background:#02040a;
-  color:#fff;
-  overflow-x:hidden;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;scroll-behavior:smooth}
+body{background:#02040a;color:#fff;overflow-x:hidden}
 
 body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 50% 5%,rgba(0,90,255,.35),transparent 35%),
-    radial-gradient(circle at 50% 45%,rgba(0,110,255,.20),transparent 35%),
-    linear-gradient(180deg,#000 0%,#02040a 55%,#000 100%);
-  z-index:-2;
+content:"";position:fixed;inset:0;
+background:
+radial-gradient(circle at 50% 0%,rgba(0,102,255,.40),transparent 35%),
+radial-gradient(circle at 50% 45%,rgba(0,102,255,.18),transparent 40%),
+linear-gradient(180deg,#000 0%,#031026 50%,#000 100%);
+z-index:-2;
 }
 
 body::after{
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(0,110,255,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,110,255,.035) 1px, transparent 1px);
-  background-size:42px 42px;
-  mask-image:linear-gradient(to bottom,transparent,#000 15%,#000 80%,transparent);
-  z-index:-1;
+content:"";position:fixed;inset:0;
+background-image:
+linear-gradient(rgba(0,110,255,.045) 1px,transparent 1px),
+linear-gradient(90deg,rgba(0,110,255,.045) 1px,transparent 1px);
+background-size:42px 42px;
+z-index:-1;
 }
 
 .glass{
-  background:rgba(5,10,20,.72);
-  border:1px solid rgba(0,115,255,.32);
-  backdrop-filter:blur(18px);
-  box-shadow:0 0 30px rgba(0,102,255,.14);
-}
-
-.blue-glow{
-  box-shadow:0 0 28px rgba(0,102,255,.55),0 0 70px rgba(0,102,255,.25);
-}
-
-.logo-glow{
-  filter:drop-shadow(0 0 30px rgba(0,102,255,.75));
-}
-
-.title-metal{
-  background:linear-gradient(90deg,#ffffff,#dce8ff,#006eff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+background:rgba(3,8,20,.78);
+border:1px solid rgba(0,115,255,.35);
+backdrop-filter:blur(18px);
+box-shadow:0 0 30px rgba(0,102,255,.16);
 }
 
 .btn{
-  background:linear-gradient(135deg,#005eff,#008cff);
-  box-shadow:0 0 25px rgba(0,102,255,.45);
+background:linear-gradient(135deg,#005eff,#0094ff);
+box-shadow:0 0 25px rgba(0,102,255,.45);
+transition:.25s;
 }
 
-.btn:hover{
-  filter:brightness(1.15);
-  transform:translateY(-2px);
-}
+.btn:hover{filter:brightness(1.15);transform:translateY(-2px)}
+.logo-glow{filter:drop-shadow(0 0 30px rgba(0,102,255,.8))}
+.title-metal{background:linear-gradient(90deg,#fff,#dce8ff,#0077ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 
-.nav-link{
-  color:#cbd5e1;
-  transition:.25s;
-}
+.card{transition:.25s}
+.card:hover{transform:translateY(-7px);border-color:#008cff;box-shadow:0 0 42px rgba(0,102,255,.35)}
 
-.nav-link:hover{
-  color:#fff;
-  text-shadow:0 0 18px #0077ff;
-}
-
-.marquee{
-  overflow:hidden;
-  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
-}
-
-.marquee-track{
-  display:flex;
-  gap:18px;
-  width:max-content;
-  animation:scroll 24s linear infinite;
-}
-
-@keyframes scroll{
-  from{transform:translateX(0)}
-  to{transform:translateX(-50%)}
-}
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.marquee-track{display:flex;gap:16px;width:max-content;animation:scroll 25s linear infinite}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 .brand{
-  min-width:128px;
-  height:78px;
-  border-radius:18px;
-  background:linear-gradient(145deg,rgba(8,15,28,.95),rgba(0,0,0,.92));
-  border:1px solid rgba(0,115,255,.35);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:900;
-  font-size:15px;
-  color:white;
+min-width:120px;height:74px;border-radius:20px;
+background:linear-gradient(145deg,#08101f,#02040a);
+border:1px solid rgba(0,115,255,.4);
+display:flex;align-items:center;justify-content:center;
+font-size:14px;font-weight:900;color:#fff;
 }
-
-.brand i{
-  font-size:34px;
-}
-
-.card{
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-7px);
-  border-color:rgba(0,132,255,.8);
-  box-shadow:0 0 45px rgba(0,102,255,.35);
-}
+.brand i{font-size:34px;color:#60a5fa}
 
 @media(max-width:768px){
-  .desktop-nav{display:none}
+main{padding-top:120px!important}
+.hero{display:flex!important;flex-direction:column!important;gap:30px!important;text-align:left!important}
+.hero-logo-box{order:-1;width:100%!important;padding:20px!important;border-radius:32px!important}
+.hero-logo{width:100%!important;max-width:340px!important;margin:auto!important}
+.hero-title{font-size:48px!important;line-height:1.05!important}
+.hero-text{font-size:19px!important;line-height:1.55!important}
+.top-buttons{grid-template-columns:1fr 1fr 1fr!important;gap:8px!important}
+.top-buttons a{font-size:12px!important;padding:12px 8px!important}
+.badges{grid-template-columns:1fr!important;font-size:16px!important}
+.float-whats{width:66px!important;height:66px!important;font-size:30px!important}
 }
 </style>
 </head>
@@ -142,71 +82,50 @@ body::after{
 <body>
 
 <header class="fixed top-0 left-0 w-full z-50 px-4 py-4">
-  <div class="max-w-7xl mx-auto glass rounded-full px-4 py-3 flex items-center justify-between">
-    
-    <a href="#inicio" class="flex items-center gap-3">
-      <img src="logo.png" class="w-12 h-12 object-contain rounded-full logo-glow">
-      <div class="hidden sm:block leading-tight">
-        <h1 class="font-black text-sm tracking-wide">4K INFORMÁTICA</h1>
-        <p class="text-[10px] text-blue-400 font-black tracking-[.22em]">ASSISTÊNCIA TÉCNICA</p>
-      </div>
-    </a>
-
-    <nav class="desktop-nav flex items-center gap-8 text-sm font-bold">
-      <a href="#servicos" class="nav-link">Serviços</a>
-      <a href="#catalogo" class="nav-link">Catálogo</a>
-      <a href="#marcas" class="nav-link">Marcas</a>
-      <a href="#contato" class="nav-link">Contato</a>
-    </nav>
-
-    <a href="https://wa.me/5598999999999?text=Olá,%20vim%20pelo%20site%20da%204K%20Informática"
-       class="btn rounded-full px-5 py-3 font-black text-sm transition">
-      WhatsApp
-    </a>
+  <div class="max-w-4xl mx-auto grid top-buttons grid-cols-3 gap-3">
+    <a href="#servicos" class="glass rounded-full px-4 py-3 text-center font-black text-sm">Serviços</a>
+    <a href="#catalogo" class="glass rounded-full px-4 py-3 text-center font-black text-sm">Catálogo</a>
+    <a href="https://wa.me/5598999999999?text=Olá,%20vim%20pelo%20site%20da%204K%20Informática" class="btn rounded-full px-4 py-3 text-center font-black text-sm">Orçamento</a>
   </div>
 </header>
 
-<main id="inicio" class="pt-32 px-5">
+<main class="px-5 pt-32">
 
-<section class="max-w-7xl mx-auto min-h-[82vh] grid lg:grid-cols-2 gap-12 items-center">
-  
+<section id="inicio" class="hero max-w-7xl mx-auto min-h-[82vh] grid lg:grid-cols-2 gap-12 items-center">
+
   <div>
     <p class="text-blue-400 font-black tracking-[.28em] text-xs md:text-sm mb-5">
       ASSISTÊNCIA TÉCNICA ESPECIALIZADA
     </p>
 
-    <h2 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+    <h1 class="hero-title text-5xl md:text-7xl font-black leading-tight mb-6">
       Tecnologia com <span class="title-metal">confiança</span>
-    </h2>
+    </h1>
 
-    <p class="text-slate-300 text-lg max-w-xl mb-8">
+    <p class="hero-text text-slate-300 text-lg max-w-xl mb-8">
       Manutenção, formatação, diagnóstico, upgrade e suporte para notebooks,
       computadores e celulares com atendimento rápido e profissional.
     </p>
 
     <div class="flex flex-col sm:flex-row gap-4 mb-8">
       <a href="https://wa.me/5598999999999?text=Olá,%20quero%20um%20orçamento%20da%204K%20Informática"
-         class="btn rounded-2xl px-8 py-4 text-center font-black transition">
+         class="btn rounded-2xl px-8 py-5 text-center font-black">
         Solicitar orçamento
       </a>
-
-      <a href="#servicos" class="glass rounded-2xl px-8 py-4 text-center font-black hover:bg-blue-950/30 transition">
+      <a href="#servicos" class="glass rounded-2xl px-8 py-5 text-center font-black">
         Ver serviços
       </a>
     </div>
 
-    <div class="glass rounded-2xl p-4 flex flex-wrap gap-4 text-sm text-slate-300">
+    <div class="badges glass rounded-2xl p-5 grid sm:grid-cols-3 gap-4 text-slate-300">
       <span><i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>Diagnóstico claro</span>
       <span><i class="fa-solid fa-bolt text-blue-400 mr-2"></i>Atendimento rápido</span>
       <span><i class="fa-solid fa-medal text-blue-400 mr-2"></i>Serviço profissional</span>
     </div>
   </div>
 
-  <div class="relative flex justify-center">
-    <div class="absolute w-[320px] h-[320px] md:w-[520px] md:h-[520px] bg-blue-600 blur-[130px] opacity-35"></div>
-    <div class="relative glass rounded-[2.5rem] p-6 md:p-10 blue-glow">
-      <img src="logo.png" class="w-[310px] md:w-[520px] object-contain logo-glow">
-    </div>
+  <div class="hero-logo-box relative flex justify-center glass rounded-[2.5rem] p-8">
+    <img src="logo.png" class="hero-logo w-[520px] object-contain logo-glow" alt="4K Informática">
   </div>
 
 </section>
@@ -218,11 +137,11 @@ body::after{
 
   <div class="marquee">
     <div class="marquee-track">
-      <div class="brand"><i class="fa-brands fa-windows text-blue-400"></i></div>
-      <div class="brand"><i class="fa-brands fa-linux text-white"></i></div>
-      <div class="brand"><i class="fa-brands fa-apple text-white"></i></div>
+      <div class="brand"><i class="fa-brands fa-windows"></i></div>
+      <div class="brand"><i class="fa-brands fa-linux"></i></div>
+      <div class="brand"><i class="fa-brands fa-apple"></i></div>
       <div class="brand"><i class="fa-brands fa-chrome"></i></div>
-      <div class="brand"><i class="fa-brands fa-android text-blue-400"></i></div>
+      <div class="brand"><i class="fa-brands fa-android"></i></div>
       <div class="brand">XIAOMI</div>
       <div class="brand">MOTOROLA</div>
       <div class="brand">SAMSUNG</div>
@@ -231,11 +150,11 @@ body::after{
       <div class="brand">HP</div>
       <div class="brand">LENOVO</div>
 
-      <div class="brand"><i class="fa-brands fa-windows text-blue-400"></i></div>
-      <div class="brand"><i class="fa-brands fa-linux text-white"></i></div>
-      <div class="brand"><i class="fa-brands fa-apple text-white"></i></div>
+      <div class="brand"><i class="fa-brands fa-windows"></i></div>
+      <div class="brand"><i class="fa-brands fa-linux"></i></div>
+      <div class="brand"><i class="fa-brands fa-apple"></i></div>
       <div class="brand"><i class="fa-brands fa-chrome"></i></div>
-      <div class="brand"><i class="fa-brands fa-android text-blue-400"></i></div>
+      <div class="brand"><i class="fa-brands fa-android"></i></div>
       <div class="brand">XIAOMI</div>
       <div class="brand">MOTOROLA</div>
       <div class="brand">SAMSUNG</div>
@@ -248,13 +167,10 @@ body::after{
 </section>
 
 <section id="servicos" class="max-w-7xl mx-auto py-20">
-  <div class="mb-12">
-    <p class="text-blue-400 font-black tracking-[.25em] text-xs mb-3">SERVIÇOS</p>
-    <h2 class="text-4xl md:text-5xl font-black">Soluções para seus dispositivos</h2>
-  </div>
+  <p class="text-blue-400 font-black tracking-[.25em] text-xs mb-3">SERVIÇOS</p>
+  <h2 class="text-4xl md:text-5xl font-black mb-10">Soluções para seus dispositivos</h2>
 
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-    
     <div class="card glass rounded-3xl p-7">
       <i class="fa-solid fa-laptop text-blue-400 text-5xl mb-6"></i>
       <h3 class="text-2xl font-black mb-3">Notebooks</h3>
@@ -296,7 +212,6 @@ body::after{
       <p class="text-slate-400 mb-6">Sistema limpo, drivers, programas essenciais e configuração inicial.</p>
       <a href="https://wa.me/5598999999999" class="font-black text-blue-400">Solicitar serviço →</a>
     </div>
-
   </div>
 </section>
 
@@ -315,7 +230,6 @@ body::after{
   </div>
 
   <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    
     <div class="card glass rounded-3xl p-6">
       <div class="h-36 rounded-2xl bg-black/50 flex items-center justify-center mb-5">
         <i class="fa-solid fa-hard-drive text-blue-400 text-6xl"></i>
@@ -351,7 +265,6 @@ body::after{
       <h3 class="text-xl font-black mt-1">Mouse e teclado</h3>
       <p class="text-slate-400 text-sm mt-2">Conforto e precisão.</p>
     </div>
-
   </div>
 </section>
 
@@ -405,7 +318,7 @@ body::after{
     <div class="grid md:grid-cols-3 gap-8 items-center">
 
       <div class="flex items-center gap-4">
-        <img src="logo.png" class="w-20 h-20 object-contain logo-glow">
+        <img src="logo.png" class="w-20 h-20 object-contain logo-glow" alt="4K Informática">
         <div>
           <h2 class="font-black text-2xl">4K INFORMÁTICA</h2>
           <p class="text-blue-400 text-sm font-black">Assistência técnica especializada</p>
@@ -439,7 +352,7 @@ body::after{
 </footer>
 
 <a href="https://wa.me/5598999999999?text=Olá,%20vim%20pelo%20site%20da%204K%20Informática"
-class="fixed bottom-5 right-5 z-50 btn w-16 h-16 rounded-full flex items-center justify-center text-3xl">
+class="float-whats fixed bottom-5 right-5 z-50 btn w-16 h-16 rounded-full flex items-center justify-center text-3xl">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
