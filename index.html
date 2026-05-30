@@ -1,225 +1,447 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4K Informática | Assistência Técnica Especializada</title>
-  <meta name="description" content="Assistência técnica especializada em notebooks, computadores e smartphones. Manutenção, formatação, upgrades, limpeza e venda de produtos." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4K Informática | Assistência Técnica Especializada</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
+  scroll-behavior:smooth;
+}
 
-    * { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+body{
+  background:#02040a;
+  color:#fff;
+  overflow-x:hidden;
+}
 
-    body {
-      background: #020617;
-      color: white;
-    }
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 5%,rgba(0,90,255,.35),transparent 35%),
+    radial-gradient(circle at 50% 45%,rgba(0,110,255,.20),transparent 35%),
+    linear-gradient(180deg,#000 0%,#02040a 55%,#000 100%);
+  z-index:-2;
+}
 
-    .glass {
-      background: rgba(15, 23, 42, .72);
-      backdrop-filter: blur(18px);
-      border: 1px solid rgba(59, 130, 246, .25);
-    }
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(0,110,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,110,255,.035) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,transparent,#000 15%,#000 80%,transparent);
+  z-index:-1;
+}
 
-    .neon {
-      box-shadow: 0 0 35px rgba(0, 102, 255, .35);
-    }
+.glass{
+  background:rgba(5,10,20,.72);
+  border:1px solid rgba(0,115,255,.32);
+  backdrop-filter:blur(18px);
+  box-shadow:0 0 30px rgba(0,102,255,.14);
+}
 
-    .gradient-text {
-      background: linear-gradient(90deg, #fff, #1d8cff, #0066ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  </style>
+.blue-glow{
+  box-shadow:0 0 28px rgba(0,102,255,.55),0 0 70px rgba(0,102,255,.25);
+}
+
+.logo-glow{
+  filter:drop-shadow(0 0 30px rgba(0,102,255,.75));
+}
+
+.title-metal{
+  background:linear-gradient(90deg,#ffffff,#dce8ff,#006eff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.btn{
+  background:linear-gradient(135deg,#005eff,#008cff);
+  box-shadow:0 0 25px rgba(0,102,255,.45);
+}
+
+.btn:hover{
+  filter:brightness(1.15);
+  transform:translateY(-2px);
+}
+
+.nav-link{
+  color:#cbd5e1;
+  transition:.25s;
+}
+
+.nav-link:hover{
+  color:#fff;
+  text-shadow:0 0 18px #0077ff;
+}
+
+.marquee{
+  overflow:hidden;
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+}
+
+.marquee-track{
+  display:flex;
+  gap:18px;
+  width:max-content;
+  animation:scroll 24s linear infinite;
+}
+
+@keyframes scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+.brand{
+  min-width:128px;
+  height:78px;
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(8,15,28,.95),rgba(0,0,0,.92));
+  border:1px solid rgba(0,115,255,.35);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:900;
+  font-size:15px;
+  color:white;
+}
+
+.brand i{
+  font-size:34px;
+}
+
+.card{
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(0,132,255,.8);
+  box-shadow:0 0 45px rgba(0,102,255,.35);
+}
+
+@media(max-width:768px){
+  .desktop-nav{display:none}
+}
+</style>
 </head>
 
 <body>
 
-  <header class="fixed top-0 left-0 w-full z-50 glass">
-    <div class="max-w-7xl mx-auto px-5 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="logo.png" class="w-12 h-12 rounded-full object-cover neon" />
+<header class="fixed top-0 left-0 w-full z-50 px-4 py-4">
+  <div class="max-w-7xl mx-auto glass rounded-full px-4 py-3 flex items-center justify-between">
+    
+    <a href="#inicio" class="flex items-center gap-3">
+      <img src="logo.png" class="w-12 h-12 object-contain rounded-full logo-glow">
+      <div class="hidden sm:block leading-tight">
+        <h1 class="font-black text-sm tracking-wide">4K INFORMÁTICA</h1>
+        <p class="text-[10px] text-blue-400 font-black tracking-[.22em]">ASSISTÊNCIA TÉCNICA</p>
+      </div>
+    </a>
+
+    <nav class="desktop-nav flex items-center gap-8 text-sm font-bold">
+      <a href="#servicos" class="nav-link">Serviços</a>
+      <a href="#catalogo" class="nav-link">Catálogo</a>
+      <a href="#marcas" class="nav-link">Marcas</a>
+      <a href="#contato" class="nav-link">Contato</a>
+    </nav>
+
+    <a href="https://wa.me/5598999999999?text=Olá,%20vim%20pelo%20site%20da%204K%20Informática"
+       class="btn rounded-full px-5 py-3 font-black text-sm transition">
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<main id="inicio" class="pt-32 px-5">
+
+<section class="max-w-7xl mx-auto min-h-[82vh] grid lg:grid-cols-2 gap-12 items-center">
+  
+  <div>
+    <p class="text-blue-400 font-black tracking-[.28em] text-xs md:text-sm mb-5">
+      ASSISTÊNCIA TÉCNICA ESPECIALIZADA
+    </p>
+
+    <h2 class="text-5xl md:text-7xl font-black leading-tight mb-6">
+      Tecnologia com <span class="title-metal">confiança</span>
+    </h2>
+
+    <p class="text-slate-300 text-lg max-w-xl mb-8">
+      Manutenção, formatação, diagnóstico, upgrade e suporte para notebooks,
+      computadores e celulares com atendimento rápido e profissional.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+      <a href="https://wa.me/5598999999999?text=Olá,%20quero%20um%20orçamento%20da%204K%20Informática"
+         class="btn rounded-2xl px-8 py-4 text-center font-black transition">
+        Solicitar orçamento
+      </a>
+
+      <a href="#servicos" class="glass rounded-2xl px-8 py-4 text-center font-black hover:bg-blue-950/30 transition">
+        Ver serviços
+      </a>
+    </div>
+
+    <div class="glass rounded-2xl p-4 flex flex-wrap gap-4 text-sm text-slate-300">
+      <span><i class="fa-solid fa-shield-halved text-blue-400 mr-2"></i>Diagnóstico claro</span>
+      <span><i class="fa-solid fa-bolt text-blue-400 mr-2"></i>Atendimento rápido</span>
+      <span><i class="fa-solid fa-medal text-blue-400 mr-2"></i>Serviço profissional</span>
+    </div>
+  </div>
+
+  <div class="relative flex justify-center">
+    <div class="absolute w-[320px] h-[320px] md:w-[520px] md:h-[520px] bg-blue-600 blur-[130px] opacity-35"></div>
+    <div class="relative glass rounded-[2.5rem] p-6 md:p-10 blue-glow">
+      <img src="logo.png" class="w-[310px] md:w-[520px] object-contain logo-glow">
+    </div>
+  </div>
+
+</section>
+
+<section id="marcas" class="max-w-7xl mx-auto py-14 border-y border-blue-500/20">
+  <p class="text-center text-blue-400 font-black tracking-[.25em] mb-8 text-xs md:text-sm">
+    MARCAS, SISTEMAS E PLATAFORMAS ATENDIDAS
+  </p>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <div class="brand"><i class="fa-brands fa-windows text-blue-400"></i></div>
+      <div class="brand"><i class="fa-brands fa-linux text-white"></i></div>
+      <div class="brand"><i class="fa-brands fa-apple text-white"></i></div>
+      <div class="brand"><i class="fa-brands fa-chrome"></i></div>
+      <div class="brand"><i class="fa-brands fa-android text-blue-400"></i></div>
+      <div class="brand">XIAOMI</div>
+      <div class="brand">MOTOROLA</div>
+      <div class="brand">SAMSUNG</div>
+      <div class="brand">REALME</div>
+      <div class="brand">DELL</div>
+      <div class="brand">HP</div>
+      <div class="brand">LENOVO</div>
+
+      <div class="brand"><i class="fa-brands fa-windows text-blue-400"></i></div>
+      <div class="brand"><i class="fa-brands fa-linux text-white"></i></div>
+      <div class="brand"><i class="fa-brands fa-apple text-white"></i></div>
+      <div class="brand"><i class="fa-brands fa-chrome"></i></div>
+      <div class="brand"><i class="fa-brands fa-android text-blue-400"></i></div>
+      <div class="brand">XIAOMI</div>
+      <div class="brand">MOTOROLA</div>
+      <div class="brand">SAMSUNG</div>
+      <div class="brand">REALME</div>
+      <div class="brand">DELL</div>
+      <div class="brand">HP</div>
+      <div class="brand">LENOVO</div>
+    </div>
+  </div>
+</section>
+
+<section id="servicos" class="max-w-7xl mx-auto py-20">
+  <div class="mb-12">
+    <p class="text-blue-400 font-black tracking-[.25em] text-xs mb-3">SERVIÇOS</p>
+    <h2 class="text-4xl md:text-5xl font-black">Soluções para seus dispositivos</h2>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    
+    <div class="card glass rounded-3xl p-7">
+      <i class="fa-solid fa-laptop text-blue-400 text-5xl mb-6"></i>
+      <h3 class="text-2xl font-black mb-3">Notebooks</h3>
+      <p class="text-slate-400 mb-6">Limpeza, troca de pasta térmica, formatação, SSD, RAM e diagnóstico.</p>
+      <a href="https://wa.me/5598999999999" class="font-black text-blue-400">Solicitar serviço →</a>
+    </div>
+
+    <div class="card glass rounded-3xl p-7">
+      <i class="fa-solid fa-desktop text-blue-400 text-5xl mb-6"></i>
+      <h3 class="text-2xl font-black mb-3">Computadores</h3>
+      <p class="text-slate-400 mb-6">Montagem, manutenção preventiva, sistema lento, upgrade e otimização.</p>
+      <a href="https://wa.me/5598999999999" class="font-black text-blue-400">Solicitar serviço →</a>
+    </div>
+
+    <div class="card glass rounded-3xl p-7">
+      <i class="fa-solid fa-mobile-screen text-blue-400 text-5xl mb-6"></i>
+      <h3 class="text-2xl font-black mb-3">Celulares</h3>
+      <p class="text-slate-400 mb-6">Configuração, backup, suporte, otimização e recuperação de dados.</p>
+      <a href="https://wa.me/5598999999999" class="font-black text-blue-400">Solicitar serviço →</a>
+    </div>
+
+    <div class="card glass rounded-3xl p-7">
+      <i class="fa-solid fa-hard-drive text-blue-400 text-5xl mb-6"></i>
+      <h3 class="text-2xl font-black mb-3">Upgrade SSD</h3>
+      <p class="text-slate-400 mb-6">Mais velocidade para abrir programas, ligar o sistema e trabalhar melhor.</p>
+      <a href="https://wa.me/5598999999999" class="font-black text-blue-400">Solicitar serviço →</a>
+    </div>
+
+    <div class="card glass rounded-3xl p-7">
+      <i class="fa-solid fa-memory text-blue-400 text-5xl mb-6"></i>
+      <h3 class="text-2xl font-black mb-3">Memória RAM</h3>
+      <p class="text-slate-400 mb-6">Upgrade para melhorar desempenho em multitarefas e uso diário.</p>
+      <a href="https://wa.me/5598999999999" class="font-black text-blue-400">Solicitar serviço →</a>
+    </div>
+
+    <div class="card glass rounded-3xl p-7">
+      <i class="fa-solid fa-shield-halved text-blue-400 text-5xl mb-6"></i>
+      <h3 class="text-2xl font-black mb-3">Formatação</h3>
+      <p class="text-slate-400 mb-6">Sistema limpo, drivers, programas essenciais e configuração inicial.</p>
+      <a href="https://wa.me/5598999999999" class="font-black text-blue-400">Solicitar serviço →</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="catalogo" class="max-w-7xl mx-auto py-20">
+  <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+    <div>
+      <p class="text-blue-400 font-black tracking-[.25em] text-xs mb-3">CATÁLOGO</p>
+      <h2 class="text-4xl md:text-5xl font-black">Produtos e acessórios</h2>
+      <p class="text-slate-400 mt-3">Espaço pronto para peças e produtos disponíveis.</p>
+    </div>
+
+    <a href="https://wa.me/5598999999999?text=Olá,%20quero%20ver%20os%20produtos%20da%204K"
+       class="glass rounded-2xl px-6 py-4 font-black hover:bg-blue-950/30 transition">
+      Ver pelo WhatsApp →
+    </a>
+  </div>
+
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    
+    <div class="card glass rounded-3xl p-6">
+      <div class="h-36 rounded-2xl bg-black/50 flex items-center justify-center mb-5">
+        <i class="fa-solid fa-hard-drive text-blue-400 text-6xl"></i>
+      </div>
+      <span class="text-blue-400 text-xs font-black">PEÇAS</span>
+      <h3 class="text-xl font-black mt-1">SSD</h3>
+      <p class="text-slate-400 text-sm mt-2">Mais velocidade para PC e notebook.</p>
+    </div>
+
+    <div class="card glass rounded-3xl p-6">
+      <div class="h-36 rounded-2xl bg-black/50 flex items-center justify-center mb-5">
+        <i class="fa-solid fa-memory text-blue-400 text-6xl"></i>
+      </div>
+      <span class="text-blue-400 text-xs font-black">UPGRADE</span>
+      <h3 class="text-xl font-black mt-1">Memória RAM</h3>
+      <p class="text-slate-400 text-sm mt-2">Melhor desempenho no dia a dia.</p>
+    </div>
+
+    <div class="card glass rounded-3xl p-6">
+      <div class="h-36 rounded-2xl bg-black/50 flex items-center justify-center mb-5">
+        <i class="fa-solid fa-plug text-blue-400 text-6xl"></i>
+      </div>
+      <span class="text-blue-400 text-xs font-black">ACESSÓRIOS</span>
+      <h3 class="text-xl font-black mt-1">Cabos e fontes</h3>
+      <p class="text-slate-400 text-sm mt-2">Produtos para uso diário.</p>
+    </div>
+
+    <div class="card glass rounded-3xl p-6">
+      <div class="h-36 rounded-2xl bg-black/50 flex items-center justify-center mb-5">
+        <i class="fa-solid fa-keyboard text-blue-400 text-6xl"></i>
+      </div>
+      <span class="text-blue-400 text-xs font-black">PERIFÉRICOS</span>
+      <h3 class="text-xl font-black mt-1">Mouse e teclado</h3>
+      <p class="text-slate-400 text-sm mt-2">Conforto e precisão.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto py-16">
+  <div class="glass rounded-[2rem] p-8 md:p-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+    <div>
+      <i class="fa-solid fa-magnifying-glass-chart text-blue-400 text-4xl mb-4"></i>
+      <h3 class="font-black text-xl">Diagnóstico</h3>
+      <p class="text-slate-400 text-sm mt-2">Avaliação clara do problema.</p>
+    </div>
+
+    <div>
+      <i class="fa-solid fa-bolt text-blue-400 text-4xl mb-4"></i>
+      <h3 class="font-black text-xl">Rapidez</h3>
+      <p class="text-slate-400 text-sm mt-2">Atendimento sem enrolação.</p>
+    </div>
+
+    <div>
+      <i class="fa-solid fa-screwdriver-wrench text-blue-400 text-4xl mb-4"></i>
+      <h3 class="font-black text-xl">Qualidade</h3>
+      <p class="text-slate-400 text-sm mt-2">Serviço organizado.</p>
+    </div>
+
+    <div>
+      <i class="fa-solid fa-headset text-blue-400 text-4xl mb-4"></i>
+      <h3 class="font-black text-xl">Suporte</h3>
+      <p class="text-slate-400 text-sm mt-2">Pós-atendimento.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contato" class="max-w-4xl mx-auto py-20 text-center">
+  <div class="glass rounded-[2rem] p-8 md:p-14 blue-glow">
+    <h2 class="text-4xl md:text-6xl font-black title-metal mb-5">Solicite seu orçamento</h2>
+    <p class="text-slate-300 text-lg mb-8">
+      Fale direto com a 4K Informática pelo WhatsApp.
+    </p>
+
+    <a href="https://wa.me/5598999999999?text=Olá,%20preciso%20de%20assistência%20técnica"
+       class="btn rounded-full px-9 py-5 inline-flex items-center gap-3 font-black transition">
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
+      Chamar agora
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="px-5 pb-8">
+  <div class="max-w-7xl mx-auto glass rounded-[2rem] p-8">
+    <div class="grid md:grid-cols-3 gap-8 items-center">
+
+      <div class="flex items-center gap-4">
+        <img src="logo.png" class="w-20 h-20 object-contain logo-glow">
         <div>
-          <h1 class="font-black text-lg leading-none">4K INFORMÁTICA</h1>
-          <p class="text-xs text-blue-400 font-semibold">Assistência Técnica</p>
+          <h2 class="font-black text-2xl">4K INFORMÁTICA</h2>
+          <p class="text-blue-400 text-sm font-black">Assistência técnica especializada</p>
         </div>
       </div>
 
-      <nav class="hidden md:flex gap-8 text-sm font-semibold text-slate-300">
-        <a href="#servicos" class="hover:text-blue-400">Serviços</a>
-        <a href="#produtos" class="hover:text-blue-400">Produtos</a>
-        <a href="#sobre" class="hover:text-blue-400">Sobre</a>
-        <a href="#contato" class="hover:text-blue-400">Contato</a>
-      </nav>
+      <div class="text-slate-400 text-sm space-y-2">
+        <p><i class="fa-brands fa-whatsapp text-blue-400 mr-2"></i> (98) 99999-9999</p>
+        <p><i class="fa-solid fa-location-dot text-blue-400 mr-2"></i> Atendimento local</p>
+        <p><i class="fa-solid fa-clock text-blue-400 mr-2"></i> Segunda a sábado</p>
+      </div>
 
-      <a href="https://wa.me/5598999999999" class="bg-blue-600 hover:bg-blue-700 px-5 py-2 rounded-full font-bold text-sm">
-        WhatsApp
-      </a>
+      <div class="flex md:justify-end gap-3">
+        <a href="#" class="w-11 h-11 rounded-full glass flex items-center justify-center hover:bg-blue-600 transition">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/5598999999999" class="w-11 h-11 rounded-full glass flex items-center justify-center hover:bg-blue-600 transition">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="#inicio" class="w-11 h-11 rounded-full glass flex items-center justify-center hover:bg-blue-600 transition">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+
     </div>
-  </header>
 
-  <section class="min-h-screen flex items-center pt-28 px-5 relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,#003bff55,transparent_45%)]"></div>
-
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
-      <div>
-        <span class="inline-block mb-5 px-4 py-2 rounded-full glass text-blue-400 text-sm font-bold">
-          Assistência técnica especializada
-        </span>
-
-        <h2 class="text-5xl md:text-7xl font-black leading-tight mb-6">
-          Tecnologia com padrão <span class="gradient-text">Premium</span>
-        </h2>
-
-        <p class="text-slate-300 text-lg mb-8 max-w-xl">
-          Manutenção em notebooks, computadores e smartphones com atendimento profissional, diagnóstico rápido e soluções confiáveis.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://wa.me/5598999999999?text=Olá,%20vim%20pelo%20site%20da%204K%20Informática"
-             class="bg-blue-600 hover:bg-blue-700 px-8 py-4 rounded-2xl font-black text-center neon">
-            Solicitar orçamento
-          </a>
-          <a href="#produtos" class="glass px-8 py-4 rounded-2xl font-bold text-center">
-            Ver produtos
-          </a>
-        </div>
-      </div>
-
-      <div class="flex justify-center">
-        <div class="glass rounded-[2rem] p-8 neon">
-          <img src="logo.png" class="w-80 h-80 object-contain rounded-full" />
-        </div>
-      </div>
+    <div class="border-t border-blue-500/20 mt-8 pt-6 text-center text-slate-500 text-sm">
+      © 2026 4K Informática. Todos os direitos reservados.
     </div>
-  </section>
+  </div>
+</footer>
 
-  <section id="servicos" class="py-24 px-5">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-14">
-        <h2 class="text-4xl md:text-5xl font-black mb-4">Serviços</h2>
-        <p class="text-slate-400">Soluções para computadores, notebooks e smartphones.</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="glass rounded-3xl p-7 hover:scale-105 transition">
-          <h3 class="text-2xl font-black mb-3 text-blue-400">Computadores</h3>
-          <p class="text-slate-300">Formatação, limpeza, instalação de programas, upgrade de SSD, memória RAM e otimização.</p>
-        </div>
-
-        <div class="glass rounded-3xl p-7 hover:scale-105 transition">
-          <h3 class="text-2xl font-black mb-3 text-blue-400">Notebooks</h3>
-          <p class="text-slate-300">Manutenção preventiva, troca de teclado, limpeza interna, sistema lento e diagnóstico técnico.</p>
-        </div>
-
-        <div class="glass rounded-3xl p-7 hover:scale-105 transition">
-          <h3 class="text-2xl font-black mb-3 text-blue-400">Smartphones</h3>
-          <p class="text-slate-300">Avaliação, configuração, backup, limpeza, acessórios e suporte para uso diário.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="produtos" class="py-24 px-5 bg-slate-950">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-14">
-        <h2 class="text-4xl md:text-5xl font-black mb-4">Produtos em destaque</h2>
-        <p class="text-slate-400">Área pronta para colocar acessórios, peças e equipamentos.</p>
-      </div>
-
-      <div class="grid md:grid-cols-4 gap-6">
-        <div class="glass rounded-3xl p-6">
-          <div class="h-40 bg-slate-900 rounded-2xl mb-5 flex items-center justify-center text-blue-400 font-black">SSD</div>
-          <h3 class="font-black text-xl">SSD 240GB</h3>
-          <p class="text-slate-400 text-sm mt-2">Mais velocidade para seu PC ou notebook.</p>
-          <a href="https://wa.me/5598999999999" class="block mt-5 bg-blue-600 rounded-xl py-3 text-center font-bold">Consultar</a>
-        </div>
-
-        <div class="glass rounded-3xl p-6">
-          <div class="h-40 bg-slate-900 rounded-2xl mb-5 flex items-center justify-center text-blue-400 font-black">RAM</div>
-          <h3 class="font-black text-xl">Memória RAM</h3>
-          <p class="text-slate-400 text-sm mt-2">Upgrade para melhorar desempenho.</p>
-          <a href="https://wa.me/5598999999999" class="block mt-5 bg-blue-600 rounded-xl py-3 text-center font-bold">Consultar</a>
-        </div>
-
-        <div class="glass rounded-3xl p-6">
-          <div class="h-40 bg-slate-900 rounded-2xl mb-5 flex items-center justify-center text-blue-400 font-black">CABOS</div>
-          <h3 class="font-black text-xl">Cabos e fontes</h3>
-          <p class="text-slate-400 text-sm mt-2">Acessórios para computador e celular.</p>
-          <a href="https://wa.me/5598999999999" class="block mt-5 bg-blue-600 rounded-xl py-3 text-center font-bold">Consultar</a>
-        </div>
-
-        <div class="glass rounded-3xl p-6">
-          <div class="h-40 bg-slate-900 rounded-2xl mb-5 flex items-center justify-center text-blue-400 font-black">PERIFÉRICOS</div>
-          <h3 class="font-black text-xl">Mouse e teclado</h3>
-          <p class="text-slate-400 text-sm mt-2">Produtos para trabalho, estudo e jogos.</p>
-          <a href="https://wa.me/5598999999999" class="block mt-5 bg-blue-600 rounded-xl py-3 text-center font-bold">Consultar</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="sobre" class="py-24 px-5">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h2 class="text-4xl md:text-5xl font-black mb-6">Por que escolher a 4K?</h2>
-        <p class="text-slate-300 text-lg mb-6">
-          Atendimento direto, visual profissional, diagnóstico claro e foco em resolver o problema do cliente sem enrolação.
-        </p>
-
-        <div class="grid grid-cols-2 gap-4">
-          <div class="glass p-5 rounded-2xl">
-            <strong class="text-3xl text-blue-400">+Rapidez</strong>
-            <p class="text-sm text-slate-400 mt-2">Atendimento ágil</p>
-          </div>
-          <div class="glass p-5 rounded-2xl">
-            <strong class="text-3xl text-blue-400">+Confiança</strong>
-            <p class="text-sm text-slate-400 mt-2">Serviço transparente</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="glass rounded-3xl p-8 neon">
-        <h3 class="text-2xl font-black mb-5">Atendemos:</h3>
-        <ul class="space-y-4 text-slate-300">
-          <li>✅ Formatação e instalação de sistema</li>
-          <li>✅ Limpeza e manutenção preventiva</li>
-          <li>✅ Upgrade de SSD e memória RAM</li>
-          <li>✅ Backup e recuperação de arquivos</li>
-          <li>✅ Venda de acessórios e peças</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="contato" class="py-24 px-5 bg-slate-950">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-4xl md:text-5xl font-black mb-5">Precisa de assistência?</h2>
-      <p class="text-slate-300 text-lg mb-8">
-        Chame agora no WhatsApp e solicite seu orçamento.
-      </p>
-
-      <a href="https://wa.me/5598999999999?text=Olá,%20preciso%20de%20assistência%20técnica"
-         class="inline-block bg-blue-600 hover:bg-blue-700 px-10 py-5 rounded-2xl font-black text-lg neon">
-        Falar no WhatsApp
-      </a>
-    </div>
-  </section>
-
-  <footer class="py-8 px-5 border-t border-blue-900/40">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
-      <p>© 2026 4K Informática. Todos os direitos reservados.</p>
-      <p>Site desenvolvido com padrão premium.</p>
-    </div>
-  </footer>
-
-  <a href="https://wa.me/5598999999999"
-     class="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white px-5 py-4 rounded-full font-black shadow-xl z-50">
-    WhatsApp
-  </a>
+<a href="https://wa.me/5598999999999?text=Olá,%20vim%20pelo%20site%20da%204K%20Informática"
+class="fixed bottom-5 right-5 z-50 btn w-16 h-16 rounded-full flex items-center justify-center text-3xl">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
